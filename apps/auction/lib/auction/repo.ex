@@ -5,10 +5,8 @@ defmodule Auction.Repo do
 
   import Ecto.Query, only: [order_by: 3]
 
-  alias Auction.Item
-
-  def all_ordered_by_title() do
-    order_by(Item, [], asc: :title)
+  def all_ordered_by_title(type) do
+    order_by(type, [], asc: :title)
     |> all()
   end
 end
