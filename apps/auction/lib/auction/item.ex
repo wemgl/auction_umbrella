@@ -24,5 +24,4 @@ defmodule Auction.Item do
       _ -> []
     end
   end
-
 end
