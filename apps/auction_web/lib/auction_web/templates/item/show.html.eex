@@ -3,4 +3,4 @@
     <li><strong>Description:</strong> <%= @item.description %></li>
     <li><strong>Auction ends at:</strong> <%= @item.ends_at %></li>
 </ul>
-<%= link("Back", to: Routes.item_path(@conn, :index)) %> &verbar; <%= link("Edit", to: Routes.item_path(@conn, :edit, @item)) %>
+<%= link("Home", to: Routes.item_path(@conn, :index)) %> &verbar; <%= link("Edit", to: Routes.item_path(@conn, :edit, @item)) %>
