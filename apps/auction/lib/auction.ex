@@ -3,9 +3,9 @@ defmodule Auction do
   Documentation for Auction.
   """
 
-  alias Auction.{FakeRepo, Item}
+  alias Auction.{Repo, Item}
 
-  @repo FakeRepo
+  @repo Repo
 
   def list_items do
     @repo.all(Item)
