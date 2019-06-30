@@ -8,7 +8,7 @@ defmodule Auction do
   @repo Repo
 
   def list_items do
-    @repo.all(Item)
+    @repo.all_ordered_by_title()
   end
 
   def get_item(id) do

@@ -2,4 +2,4 @@
 
 <%= render("form.html", item: @item, action: Routes.item_path(@conn, :update, @item.data)) %>
 
-<%= link("Back", to: Routes.item_path(@conn, :show, @item.data)) %>
+<%= link("Home", to: Routes.item_path(@conn, :show, @item.data)) %>
