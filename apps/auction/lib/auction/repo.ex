@@ -8,8 +8,7 @@ defmodule Auction.Repo do
   alias Auction.Item
 
   def all_ordered_by_title() do
-    Item
-    |> order_by([], asc: :title)
+    order_by(Item, [], asc: :title)
     |> all()
   end
 end
