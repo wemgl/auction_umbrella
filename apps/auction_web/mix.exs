@@ -45,7 +45,9 @@ defmodule AuctionWeb.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:auction, in_umbrella: true},
-      {:phoenix_ecto, "~> 4.0"}
+      {:phoenix_ecto, "~> 4.0"},
+      {:pbkdf2_elixir, "~> 1.0.2"},
+      {:comeonin, "~> 5.1.2"}
     ]
   end
 
