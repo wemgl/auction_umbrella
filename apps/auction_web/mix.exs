@@ -47,7 +47,8 @@ defmodule AuctionWeb.MixProject do
       {:auction, in_umbrella: true},
       {:phoenix_ecto, "~> 4.0"},
       {:pbkdf2_elixir, "~> 1.0.2"},
-      {:comeonin, "~> 5.1.2"}
+      {:comeonin, "~> 5.1.2"},
+      {:timex, "~> 3.6.1"}
     ]
   end
 
