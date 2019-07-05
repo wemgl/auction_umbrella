@@ -11,7 +11,7 @@ defmodule AuctionWeb.DatetimeHelpers do
 
   def formatted_datetime(datetime) do
     datetime
-    |> Timex.to_datetime(:local)
+    |> Timex.local()
     |> Timex.format!("{M}/{D}/{YYYY} {h12}:{m}{am}")
   end
 end
