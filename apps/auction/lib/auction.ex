@@ -33,7 +33,7 @@ defmodule Auction do
   end
 
   def delete_item(%Auction.Item{} = item),
-      do: @repo.delete(item)
+    do: @repo.delete(item)
 
   def update_item(%Auction.Item{} = item, updates) do
     item
@@ -42,7 +42,7 @@ defmodule Auction do
   end
 
   def new_item(),
-      do: Item.changeset(%Item{})
+    do: Item.changeset(%Item{})
 
   def edit_item(id) do
     get_item(id)
@@ -78,14 +78,15 @@ defmodule Auction do
 
   def get_bids_for_user(user) do
     query =
-      from b in Bid,
-           where: b.user_id == ^user.id,
-           order_by: [
-             desc: :inserted_at
-           ],
-           preload: :item,
-           limit: 10
+      from(b in Bid,
+        where: b.user_id == ^user.id,
+        order_by: [
+          desc: :inserted_at
+        ],
+        preload: :item,
+        limit: 10
+      )
+
     @repo.all(query)
   end
-
 end

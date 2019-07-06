@@ -6,6 +6,7 @@ defmodule AuctionWeb.DatetimeHelpers do
       cents
       |> Decimal.div(100)
       |> Decimal.round(2)
+
     "$#{dollars_and_cents}"
   end
 

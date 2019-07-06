@@ -20,6 +20,7 @@ defmodule AuctionWeb.SessionController do
         |> put_session(:user_id, user.id)
         |> put_flash(:info, "Successfully logged in")
         |> redirect(to: Routes.user_path(conn, :show, user))
+
       _ ->
         conn
         |> put_flash(:error, "That user name and password combination cannot be found")
@@ -30,7 +31,8 @@ defmodule AuctionWeb.SessionController do
   def delete(conn, _params) do
     conn
     |> clear_session()
-    |> configure_session(drop: true) # dropping the session means it's not in the response to the user anymore.
+    # dropping the session means it's not in the response to the user anymore.
+    |> configure_session(drop: true)
     |> redirect(to: Routes.item_path(conn, :index))
   end
 end

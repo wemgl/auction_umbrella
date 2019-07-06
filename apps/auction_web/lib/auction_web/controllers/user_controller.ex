@@ -32,7 +32,8 @@ defmodule AuctionWeb.UserController do
       conn
       |> put_flash(:error, "Sorry, you're not allowed to see that page.")
       |> redirect(to: Routes.item_path(conn, :index))
-      |> halt() # Tells this plug to stop processing this request
+      # Tells this plug to stop processing this request
+      |> halt()
     else
       conn
     end
