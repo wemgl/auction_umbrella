@@ -32,7 +32,6 @@ ready(function () {
     let channel = socket.channel(`item:${itemId}`, {});
 
     channel.on('new_bid', data => {
-      console.log('new_bid message received:', data);
       let bids = document.getElementById('bids');
       bids.insertAdjacentHTML('afterbegin', data.body);
     });

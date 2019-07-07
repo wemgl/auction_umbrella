@@ -30,10 +30,11 @@ defmodule AuctionWeb.Router do
     delete "/logout", SessionController, :delete
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", AuctionWeb do
-  #   pipe_through :api
-  # end
+   scope "/api", AuctionWeb.API do
+     pipe_through :api
+
+     resources "/items", ItemController, only: [:index, :show]
+   end
 
   defp put_user_token(conn, _) do
     if current_user = conn.assigns[:current_user] do
