@@ -11,7 +11,8 @@ defmodule Auction.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -27,7 +28,13 @@ defmodule Auction.MixProject do
   defp deps do
     [
       {:ecto_sql, "~> 3.1.6"},
-      {:postgrex, "~> 0.14.3"}
+      {:postgrex, "~> 0.14.3"},
+      {:pbkdf2_elixir, "~> 1.0.2"},
+      {:comeonin, "~> 5.1.2"},
     ]
+  end
+
+  defp aliases do
+    [test: ["ecto.create --quiet", "ecto.migrate", "test"]]
   end
 end
