@@ -42,7 +42,7 @@ defmodule AuctionTest do
       assert Repo.one(count_query) == before_count + 1
     end
 
-    test "the ITem in the database has the attributes provided" do
+    test "the Item in the database has the attributes provided" do
       attrs = %{title: "test item", description: "test description"}
       {:ok, item} = Auction.insert_item(attrs)
       assert item.title == attrs.title
